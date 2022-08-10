@@ -1,8 +1,8 @@
 const express = require('express');
-const routerApi = require('../routes');
 const cors = require('cors');
+const routerApi = require('./routes');
 
-const { logErrors, errorHandler, boomerrorHandler } = require('../middlewares/error.handler')
+const { logErrors, errorHandler, boomerrorHandler } = require('./middlewares/error.handler')
 const app = express();
 const port = 3000;
 
@@ -12,7 +12,7 @@ const whitelist = ['http://localhost:3000', 'https://sipse.com'];
 /*crear la opcion que tendra acceso*/
 const options = {
   origin: (origin, callback) => {
-    if (whitelist.includes(origin)) {
+    if (whitelist.includes(origin) || !origin) {
       callback(null, true);
     } else {
       callback(new Error('no permitido'))
