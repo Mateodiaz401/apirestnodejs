@@ -1,5 +1,8 @@
 const boom = require('@hapi/boom');
 
+const getConnection = require('../libs/postgres');
+const { get } = require('../routes/products.router');
+
 class UserService {
   constructor() { }
 
@@ -8,6 +11,8 @@ class UserService {
   }
 
   async find() {
+    const client = await getConnection();
+    const
     return [];
   }
 
