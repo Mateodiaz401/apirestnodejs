@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "lint": "eslint"
+    "lint": "eslint",
+    "migrations:generate": "sequelize-cli migration:generate --name",
+    "init:seeders": "sequelize-cli init:seeders --name",
+    "migrations:run": "sequelize-cli db:migrate",
+    "migrations:reverte": "sequelize-cli db:migrate:undo",
+    "migrations:delete": "sequelize-cli db:migrate:undo:all"
   },
   "keywords": [],
   "author": "Mateo Díaz <mateodiaz401@gmail.com>",
