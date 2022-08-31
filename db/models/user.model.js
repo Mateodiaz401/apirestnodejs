@@ -32,8 +32,12 @@ const UserSchema = {
 }
 
 class User extends Model {
-  static associate() {
+  static associate(models) {
     // associate
+    this.hasOne(models.Customer, {
+      as: 'customer',
+      foreignKey: 'userId'
+    })
   }
 
   static config(sequelize) {
@@ -46,5 +50,6 @@ class User extends Model {
   }
 }
 
+//esto es una pruba
 
 module.exports = { USER_TABLE, UserSchema, User }

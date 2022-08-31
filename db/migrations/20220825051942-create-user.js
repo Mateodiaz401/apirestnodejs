@@ -10,7 +10,7 @@ module.exports = {
   //Para borrar la tabla
   async down(queryInterface) {
 
-    await queryInterface.drop(USER_TABLE);
+    await queryInterface.dropTable(USER_TABLE);
 
   }
 };
