@@ -34,6 +34,7 @@ class Category extends Model {
       as: 'products',
       foreignKey: 'categoryId'
     });
+
   }
 
   static config(sequelize) {
